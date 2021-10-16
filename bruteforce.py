@@ -105,8 +105,8 @@ def bruteforce(combinations):
 	f"{best_gain}")
 
 
-
-combinations = return_all_combinations()
-bruteforce(combinations)
+def brute_main():
+	combinations = return_all_combinations()
+	bruteforce(combinations)
 
 # Bruteforce = O(n ** 2)
