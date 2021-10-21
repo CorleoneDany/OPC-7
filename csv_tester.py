@@ -17,5 +17,9 @@ def read_csv(csv_file):
 
         #Multiplier toutes les valeurs par 100 puis les diviser ensuite par 100 ?
 
+        #Arrondir l'argent restant au plus bas ? plus haut ? 
+        #Ok si les résultats ne sont pas faussés a cause des centimes ce qui me semble
+        #peu probable
+
 read_csv("dataset1.csv")
 read_csv("dataset2.csv")
