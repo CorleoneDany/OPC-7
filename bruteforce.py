@@ -50,7 +50,7 @@ def return_gains_list():
 	result = []
 	weight_list = return_weight_list()
 	profit_list = return_profit_list()
-	for option in range(20):
+	for option in len(weight_list):
 		result.append(
 			(int(weight_list[option]) * int(profit_list[option])) / 100)
 	return result
