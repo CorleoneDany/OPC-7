@@ -25,24 +25,24 @@ stocks = {
 }
 
 
-def return_keys():
-	keys_list = stocks.keys()
+def return_keys(dict):
+	keys_list = dict.keys()
 	return keys_list
 
 
-def return_weight_list():
+def return_weight_list(dict):
 	result = []
-	keys_list = return_keys()
+	keys_list = return_keys(dict)
 	for key in keys_list:
-		result.append(stocks[key][0])
+		result.append(dict[key][0])
 	return result
 
 
-def return_profit_list():
+def return_profit_list(dict):
 	result = []
-	keys_list = return_keys()
+	keys_list = return_keys(dict)
 	for key in keys_list:
-		result.append(stocks[key][1])
+		result.append(dict[key][1])
 	return result
 
 
@@ -56,27 +56,27 @@ def return_gains_list():
 	return result
 
 
-def return_gain_from_key(key):
-	stock_values = stocks.get(key)
+def return_gain_from_key(dict ,key):
+	stock_values = dict.get(key)
 	weight = stock_values[0]
 	profit = stock_values[1]
 	return ((weight * profit) / 100)
 
 
-def return_weight_from_key(key):
-	stock_values = stocks.get(key)
+def return_weight_from_key(dict, key):
+	stock_values = dict.get(key)
 	return stock_values[0]
 
 
-def return_profit_from_key(key):
-	stock_values = stocks.get(key)
+def return_profit_from_key(dict, key):
+	stock_values = dict.get(key)
 	return stock_values[1]
 
 
-def return_all_combinations():
+def return_all_combinations(dict):
 	result = []
-	for L in range(0, len(stocks) + 1):
-		for subset in itertools.combinations(stocks, L):
+	for L in range(0, len(dict) + 1):
+		for subset in itertools.combinations(dict, L):
 			result.append(subset)
 	return result
 
@@ -106,7 +106,7 @@ def bruteforce(combinations):
 
 
 def brute_main():
-	combinations = return_all_combinations()
+	combinations = return_all_combinations(stocks)
 	bruteforce(combinations)
 
 # Bruteforce = O(n ** 2)

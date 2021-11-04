@@ -5,13 +5,7 @@ from bruteforce import *
 
 # Prints the items which are put in a
 # knapsack of capacity W
-def printknapSack(W, wt, val):
-    if len(wt) != len(val):
-        print("Wt and val are different length!")
-    elif len(wt) == len(val):
-        print("Wt and val are same length!")
-
-
+def printknapSack(W, wt, val, name_list):
     n = len(val)
     best_actions = []
     K = [[0 for w in range(W + 1)]
@@ -32,7 +26,7 @@ def printknapSack(W, wt, val):
 
     # stores the result of Knapsack
     res = K[n][W]
-    print(f"Le meilleur revenu possible est de : {float(res) / 100}")
+    print(f"Le meilleur revenu possible est de : {float(res) / 100}€")
     
     w = W
     for i in range(n, 0, -1):
@@ -55,8 +49,9 @@ def printknapSack(W, wt, val):
             res = res - val[i - 1]
             w = w - wt[i - 1]
     
-    print(f"La meilleure suite d'action est la suivante : {best_actions}")
-    #print(", ".join(str(option) for option in best_actions))
+    #print(f"La meilleure suite d'action est la suivante : {best_actions}")
+    print("Pour avoir les meilleurs revenus, sélectionner les options suivantes : ")
+    print(", ".join(str(float(option) / 100) for option in best_actions))
 
 
 #Optimised = O(n)
