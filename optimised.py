@@ -8,6 +8,7 @@ from bruteforce import *
 def printknapSack(W, wt, val, name_list):
     n = len(val)
     best_actions = []
+    best_values = []
     K = [[0 for w in range(W + 1)]
             for i in range(n + 1)]
             
@@ -42,7 +43,9 @@ def printknapSack(W, wt, val, name_list):
         else:
 
             # This item is included.
-            best_actions.append(wt[i - 1])
+            best_actions.append(name_list[i - 1])
+            best_values.append((wt[i - 1] / 100))
+
             
             # Since this weight is included
             # its value is deducted
@@ -51,7 +54,10 @@ def printknapSack(W, wt, val, name_list):
     
     #print(f"La meilleure suite d'action est la suivante : {best_actions}")
     print("Pour avoir les meilleurs revenus, sélectionner les options suivantes : ")
-    print(", ".join(str(float(option) / 100) for option in best_actions))
+    #print(", ".join(str(action_name)) for action_name in best_actions)
+    for action_name, best_value in zip(best_actions, best_values):
+        print(f"{action_name} au prix de {best_value}€")
+    #print(", ".join(str(float(action_value) / 100) for action_value in best_values))
 
 
 #Optimised = O(n)

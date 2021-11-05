@@ -15,7 +15,7 @@ def return_cleaned_dict(csv_file):
         return(cleaned_dict)
 
 def optimised_tester(dict):
-    name_list = dict.keys()
+    name_list = return_keys(dict)
     weights_list = return_weight_list(dict)
     gains_list = return_profit_list(dict)
     money = 500

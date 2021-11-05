@@ -26,8 +26,7 @@ stocks = {
 
 
 def return_keys(dict):
-	keys_list = dict.keys()
-	return keys_list
+	return list(dict.keys())
 
 
 def return_weight_list(dict):
