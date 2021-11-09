@@ -15,11 +15,15 @@ def return_cleaned_dict(csv_file):
         return(cleaned_dict)
 
 def optimised_tester(dict):
+    start = time.time()
     name_list = return_keys(dict)
     weights_list = return_weight_list(dict)
     gains_list = return_profit_list(dict)
     money = 500
     printknapSack(money * 100, weights_list, gains_list, name_list)
+    end = time.time()
+    elapsed_time = round(end - start)
+    print(f"L'éxécution du script à prit environ {elapsed_time} secondes.")
 
 
 #return_cleaned_dict("dataset1.csv")
