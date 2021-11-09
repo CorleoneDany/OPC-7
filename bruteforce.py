@@ -104,12 +104,13 @@ def bruteforce(dict, combinations):
 
 
 def brute_main():
+	print("Calcul en cours.")
 	start = time.time()
 	combinations = return_all_combinations(stocks)
 	bruteforce(stocks, combinations)
 	end = time.time()
 	elapsed_time = round(end - start)
-	print(f"L'éxécution du script à prit environ {elapsed_time} secondes.")
+	print(f"L'éxécution du script à prit environ {elapsed_time} secondes.\n")
 
 brute_main()
 
