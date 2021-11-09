@@ -81,32 +81,36 @@ def return_all_combinations(dict):
 	return result
 
 
-def test_combination(combination):
+def test_combination(combination, dict):
 	money = 500.0
 	total_profit = 0.0
 	for action in combination:
-		if money >= return_weight_from_key(action):
-			total_profit += return_gain_from_key(action)
-			money -= return_weight_from_key(action)
+		if money >= return_weight_from_key(dict, action):
+			total_profit += return_gain_from_key(dict, action)
+			money -= return_weight_from_key(dict, action)
 	return total_profit
 
 
-def bruteforce(combinations):
+def bruteforce(dict, combinations):
 	best_option = []
 	best_gain = 0
 	for option in combinations:
-		gain = test_combination(option)
+		gain = test_combination(option, dict)
 		if gain > best_gain:
 			best_gain = gain
 			best_option = option
-		else:
-			print(f"{gain} est inférieur a {best_gain}")
 	print(f"La meilleure option est la suivante : {best_option} et elle rapportera "
 	f"{best_gain}")
 
 
 def brute_main():
+	start = time.time()
 	combinations = return_all_combinations(stocks)
-	bruteforce(combinations)
+	bruteforce(stocks, combinations)
+	end = time.time()
+	elapsed_time = round(end - start)
+	print(f"L'éxécution du script à prit environ {elapsed_time} secondes.")
+
+brute_main()
 
 # Bruteforce = O(n ** 2)
