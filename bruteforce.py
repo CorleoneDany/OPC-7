@@ -110,7 +110,7 @@ def bruteforce(dict, combinations):
             best_option = option
     print(
         f"La meilleure option est la suivante : {best_option} et elle rapportera "
-        f"{best_gain}")
+        f"{best_gain}€")
 
 
 def brute_main():
