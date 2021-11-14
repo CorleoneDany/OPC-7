@@ -6,6 +6,7 @@ from bruteforce import *
 # Prints the items which are put in a
 # knapsack of capacity W
 def printknapSack(W, wt, val, name_list):
+    """Executes the knapsack algorithm from the list of values needed."""
     n = len(val)
     best_actions = []
     best_values = []
@@ -52,14 +53,9 @@ def printknapSack(W, wt, val, name_list):
             res = res - val[i - 1]
             w = w - wt[i - 1]
     
-    #print(f"La meilleure suite d'action est la suivante : {best_actions}")
+
     print("Pour avoir les meilleurs revenus, sélectionner les options suivantes : ")
-    #print(", ".join(str(action_name)) for action_name in best_actions)
     for action_name, best_value in zip(best_actions, best_values):
         print(f"{action_name} au prix de {best_value}€")
-    #print(", ".join(str(float(action_value) / 100) for action_value in best_values))
-
 
 #Optimised = O(n)
-
-#Optimised ouvre un tableau n = capacity donc séparer capacity de money 
