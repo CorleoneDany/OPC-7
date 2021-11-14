@@ -1,5 +1,6 @@
 import itertools
 import time
+from tqdm import tqdm
 
 stocks = {
     "Action-1": [20, 5],
@@ -103,7 +104,7 @@ def bruteforce(dict, combinations):
     """Returns the best options to buy from a dict and its combinations."""
     best_option = []
     best_gain = 0
-    for option in combinations:
+    for option in tqdm(combinations):
         gain = test_combination(option, dict)
         if gain > best_gain:
             best_gain = gain

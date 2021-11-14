@@ -15,7 +15,7 @@ def printknapSack(W, wt, val, name_list):
 
     # Build table K[][] in bottom
     # up manner
-    for i in range(n + 1):
+    for i in tqdm(range(n + 1)):
         for w in range(W + 1):
             if i == 0 or w == 0:
                 K[i][w] = 0
