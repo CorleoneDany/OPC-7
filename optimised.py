@@ -11,6 +11,7 @@ def printknapSack(W, wt, val, name_list):
     n = len(val)
     best_actions = []
     price_list = []
+    total_price = 0
     K = [[0 for w in range(W + 1)] for i in range(n + 1)]
 
     # Build table K[][] in bottom
@@ -54,8 +55,11 @@ def printknapSack(W, wt, val, name_list):
     print(
         "Pour avoir les meilleurs revenus, sélectionner les options suivantes : "
     )
-    for action_name, price_list in zip(best_actions, price_list):
-        print(f"{action_name} au prix de {price_list}€")
+    for action_name, price in zip(best_actions, price_list):
+        print(f"{action_name} au prix de {price}€")
+        total_price += price
+
+    print(f"Au final nous aurons dépensé {total_price}€ pour ce résultat.")
 
 
 #Optimised = O(n)

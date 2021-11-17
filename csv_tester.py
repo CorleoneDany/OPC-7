@@ -36,5 +36,6 @@ def optimised_tester(dict):
 
 #return_cleaned_dict("dataset1.csv")
 #return_cleaned_dict("dataset2.csv")
+brute_main()
 optimised_tester(return_cleaned_dict("dataset1.csv"))
 optimised_tester(return_cleaned_dict("dataset2.csv"))
