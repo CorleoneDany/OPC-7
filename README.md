@@ -19,4 +19,4 @@
 pip install requirements.txt
 ```
 
-puis lancer le code via le lancement du fichier optimised.py.
+puis lancer le code via le lancement du fichier csv_tester.py.
