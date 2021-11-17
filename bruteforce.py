@@ -118,6 +118,4 @@ def brute_main():
     )
 
 
-brute_main()
-
 # Bruteforce = O(n ** 2)
