@@ -33,31 +33,22 @@ def return_keys(dict):
 
 def return_weight_list(dict):
     """Returns a list of weights from a dict."""
-    result = []
     keys_list = return_keys(dict)
-    for key in keys_list:
-        result.append(dict[key][0])
-    return result
+    return [dict[key][0] for key in keys_list]
 
 
 def return_profit_list(dict):
     """Returns a list of profits from a dict."""
-    result = []
     keys_list = return_keys(dict)
-    for key in keys_list:
-        result.append(dict[key][1])
-    return result
+    return [dict[key][1] for key in keys_list]
 
 
 def return_gains_list():
     """Returns a list of gains from a dict."""
-    result = []
     weight_list = return_weight_list()
     profit_list = return_profit_list()
-    for option in range(len(weight_list)):
-        result.append(
-            (int(weight_list[option]) * int(profit_list[option])) / 100)
-    return result
+    return [(int(weight_list[option]) * int(profit_list[option])) / 100
+            for option in range(len(weight_list))]
 
 
 def return_gain_from_key(dict, key):
@@ -83,7 +74,7 @@ def return_profit_from_key(dict, key):
 def return_all_combinations(dict):
     """Returns all combinations from the dict."""
     result = []
-    for L in range(0, len(dict) + 1):
+    for L in range(len(dict) + 1):
         for subset in itertools.combinations(dict, L):
             result.append(subset)
     return result
