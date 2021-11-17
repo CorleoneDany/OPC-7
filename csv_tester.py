@@ -10,11 +10,11 @@ def return_cleaned_dict(csv_file):
         reader = csv.DictReader(csv_file, delimiter=',')
         for row in reader:
             if float(row["profit"]) > 0 and float(row["price"]) > 0:
-                cleaned_dict[row["name"]] = []
-                cleaned_dict[row["name"]].append(
-                    round(float(row["price"]) * 100))
-                cleaned_dict[row["name"]].append(
-                    round(float(row["price"]) * float(row["profit"])))
+                cleaned_dict[row["name"]] = [
+                    round(float(row["price"]) * 100),
+                    round(float(row["price"]) * float(row["profit"])),
+                ]
+
         return (cleaned_dict)
 
 
