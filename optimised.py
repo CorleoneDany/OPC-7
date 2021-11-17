@@ -10,7 +10,7 @@ def printknapSack(W, wt, val, name_list):
     """Executes the knapsack algorithm from the list of values needed."""
     n = len(val)
     best_actions = []
-    best_values = []
+    price_list = []
     K = [[0 for w in range(W + 1)] for i in range(n + 1)]
 
     # Build table K[][] in bottom
@@ -44,7 +44,7 @@ def printknapSack(W, wt, val, name_list):
 
             # This item is included.
             best_actions.append(name_list[i - 1])
-            best_values.append((wt[i - 1] / 100))
+            price_list.append((wt[i - 1] / 100))
 
             # Since this weight is included
             # its value is deducted
@@ -54,8 +54,8 @@ def printknapSack(W, wt, val, name_list):
     print(
         "Pour avoir les meilleurs revenus, sélectionner les options suivantes : "
     )
-    for action_name, best_value in zip(best_actions, best_values):
-        print(f"{action_name} au prix de {best_value}€")
+    for action_name, best_value in zip(best_actions, price_list):
+        print(f"{action_name} au prix de {price_list}€")
 
 
 #Optimised = O(n)
