@@ -54,7 +54,7 @@ def printknapSack(W, wt, val, name_list):
     print(
         "Pour avoir les meilleurs revenus, sélectionner les options suivantes : "
     )
-    for action_name, best_value in zip(best_actions, price_list):
+    for action_name, price_list in zip(best_actions, price_list):
         print(f"{action_name} au prix de {price_list}€")
 
 
