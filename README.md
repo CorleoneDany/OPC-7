@@ -14,9 +14,4 @@
  
  ## Utilisation du projet.
  
- Installer les dépendances via un 
- ```python
-pip install requirements.txt
-```
-
-puis lancer le code via le lancement du fichier main.py.
+ Installer l'environnement virtuel ainsi que ses dépendances via le fichier v-env.sh puis lancer le code via le lancement du fichier main.py.
