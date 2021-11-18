@@ -14,9 +14,8 @@
  
  ## Utilisation du projet.
  
- Installer les dépendances via un 
- ```python
-pip install requirements.txt
-```
+ Installer l'environnement virtuel ainsi que ses dépendances via le fichier v-env.sh puis lancer le code via le lancement du fichier main.py.
 
-puis lancer le code via le lancement du fichier main.py.
+ ## GUI.
+ 
+ Cette branche contient en plus une interface simpliste permettant de sélectionner nos fichiers CSV via l'explorateur de fichier.
