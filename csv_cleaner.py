@@ -1,8 +1,10 @@
 import csv
-from tkinter import Tk     # from tkinter import Tk for Python 3.x
+import tkinter as tk   # from tkinter import Tk for Python 3.x
 from tkinter import filedialog
 
 def open_files():
+    gui = tk.Tk()
+    gui.withdraw()
     return filedialog.askopenfilenames(initialdir=".",
                                           title="Veuillez choisir un fichier csv",
                                           filetypes= (("csv files","*.csv"),
