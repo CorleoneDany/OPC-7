@@ -1,4 +1,12 @@
 import csv
+from tkinter import Tk     # from tkinter import Tk for Python 3.x
+from tkinter import filedialog
+
+def open_files():
+    return filedialog.askopenfilenames(initialdir=".",
+                                          title="Veuillez choisir un fichier csv",
+                                          filetypes= (("csv files","*.csv"),
+                                          ("all files","*.*")))
 
 
 def return_cleaned_dict(csv_file):
