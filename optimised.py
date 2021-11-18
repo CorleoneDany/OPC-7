@@ -1,4 +1,6 @@
-from bruteforce import *
+import time
+from bruteforce import return_keys, return_weight_list, return_profit_list
+from tqdm import tqdm
 
 # Python3 code for Dynamic Programming
 # based solution for 0-1 Knapsack problem
@@ -41,16 +43,14 @@ def printknapSack(W, wt, val, name_list):
         # one/ it means the item is included.
         if res == K[i - 1][w]:
             continue
-        else:
+        # This item is included.
+        best_actions.append(name_list[i - 1])
+        price_list.append((wt[i - 1] / 100))
 
-            # This item is included.
-            best_actions.append(name_list[i - 1])
-            price_list.append((wt[i - 1] / 100))
-
-            # Since this weight is included
-            # its value is deducted
-            res = res - val[i - 1]
-            w = w - wt[i - 1]
+        # Since this weight is included
+        # its value is deducted
+        res = res - val[i - 1]
+        w = w - wt[i - 1]
 
     print(
         "Pour avoir les meilleurs revenus, sélectionner les options suivantes : "
@@ -61,5 +61,20 @@ def printknapSack(W, wt, val, name_list):
 
     print(f"Au final nous aurons dépensé {total_price}€ pour ce résultat.")
 
+
+def optimised_tester(dict):
+    """Returns the result from the knapsack algorithm from a dict."""
+    start = time.time()
+    print("Calcul en cours.")
+    name_list = return_keys(dict)
+    weights_list = return_weight_list(dict)
+    gains_list = return_profit_list(dict)
+    money = 500
+    printknapSack(money * 100, weights_list, gains_list, name_list)
+    end = time.time()
+    elapsed_time = round(end - start)
+    print(
+        f"L'éxécution du script optimisé à prit environ {elapsed_time} secondes.\n"
+    )
 
 #Optimised = O(n)
